@@ -1,0 +1,24 @@
+{
+    "sEmptyTable"    : "Tidak ada data",
+    "sInfo"          : "Menampilkan _START_ - _END_ (Total _TOTAL_ data)",
+    "sInfoEmpty"     : "Tidak ada data",
+    "sInfoFiltered"  : "（disaring dari _MAX_ data）",
+    "sEmptyTable"    : "Tidak ada data",
+    "sInfoPostFix"   : "",
+    "sInfoThousands" : ",",
+    "sLengthMenu"    : "Tampilkan per _MENU_ data",
+    "sLoadingRecords": "Sedang memuat...",
+    "sProcessing"    : "Sedang memproses...",
+    "sSearch"        : "Cari:",
+    "sZeroRecords"   : "Tidak ditemukan data",
+    "oPaginate": {
+        "sFirst"    : "Pertama",
+        "sLast"     : "Terakhir" ,
+        "sNext"     : "Berikutnya",
+        "sPrevious" : "Sebelumnya"
+    },
+    "oAria": {
+        "sSortAscending": ": Urutkan menaik",
+        "sSortDescending": ": Urutkan menurun"
+    }
+}

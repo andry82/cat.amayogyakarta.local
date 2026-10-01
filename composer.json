@@ -1,0 +1,53 @@
+{
+	"name": "arif-rh/diginiq-installer",
+	"type": "project",
+	"description": "Installer for Diginiq Starter project using CodeIgniter 4",
+	"homepage": "https://github.com/arif-rh/diginiq-installer",
+	"license": "MIT",
+	"keywords": ["codeigniter4", "codeigniter4 installer", "codeigniter4 subfolder", "codeigniter4 sub directory", "codeigniter4 starter project"],
+	"require": {
+		"php": ">=7.2",
+		"arif-rh/ci4-auth": "^0.4",
+		"arif-rh/ci4-dynamic-model": "^0.3",
+		"arif-rh/ci4-themes": "^1.1",
+		"cboden/ratchet": "^0.4.4",
+		"codeigniter4/framework": "^4.1",
+		"ncjoes/office-converter": "^1.0",
+		"phpoffice/phpspreadsheet": "^1.22",
+		"phpoffice/phpword": "^0.18.3",
+		"studio-42/elfinder": "^2.1",
+		"textalk/websocket": "^1.5"
+	},
+	"require-dev": {
+		"arif-rh/git-hooks": "^0.1",
+		"mikey179/vfsstream": "1.6.*",
+		"php-coveralls/php-coveralls": "^2.2",
+		"phpunit/phpunit": "^8.5"
+	},
+	"autoload": {
+		"psr-4": {
+			"Arifrh\\Diginiq\\": "diginiq-app/bin"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\Support\\": "tests/_support"
+		}
+	},
+	"config": {
+		"vendor-dir": "diginiq-app/vendor",
+		"sort-packages": true
+	},
+	"scripts": {
+		"test": "diginiq-app\\vendor\\bin\\phpunit",
+		"testdox": "diginiq-app\\vendor\\bin\\phpunit --testdox",
+		"precommit": "Arifrh\\GitHooks\\PreCommit::CI4",
+		"install-CI4": "Arifrh\\Diginiq\\Installer::postInstall",
+		"post-update-cmd": [
+            "@composer dump-autoload"
+        ],
+		"post-create-project-cmd": [
+			"@install-CI4"
+        ]
+	}
+}

@@ -1,0 +1,25 @@
+DROP TABLE IF EXISTS `registrasi`;
+CREATE TABLE `registrasi` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `no_registrasi` VARCHAR (50) NULL,
+  `nama_lengkap` VARCHAR (100) NULL,
+  `kode_test` VARCHAR (20) NULL,
+  `desa_id` INT NULL,
+  `tanggal_registrasi` DATETIME,
+  `user_id` INT NULL,
+  `mulai_tes_tertulis` DATETIME,
+  `selesai_tes_tertulis` DATETIME,
+  `sisa_waktu_tertulis` SMALLINT NOT NULL DEFAULT 0,
+  `skor_tertulis` SMALLINT NOT NULL DEFAULT 0,
+  `mulai_tes_praktik` DATETIME,
+  `selesai_tes_praktik` DATETIME,
+  `sisa_waktu_praktik` SMALLINT NOT NULL DEFAULT 0,
+  `skor_praktik` SMALLINT NOT NULL DEFAULT 0,
+  `skor_word` SMALLINT NOT NULL DEFAULT 0,
+  `skor_excel` SMALLINT NOT NULL DEFAULT 0,
+  `skor_ppt` SMALLINT NOT NULL DEFAULT 0,
+  `skor_email` SMALLINT NOT NULL DEFAULT 0,
+  `skor_wawancara` SMALLINT NOT NULL DEFAULT 0,
+  `last_page` VARCHAR (100) NULL,
+  PRIMARY KEY (`id`)
+) ENGINE = INNODB CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;

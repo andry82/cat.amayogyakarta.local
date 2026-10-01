@@ -1,0 +1,126 @@
+@import 'backend.css';
+
+.sidebar {
+	overflow-y: auto !important;
+}
+
+[class*="sidebar-dark-"] {
+	background-color: #183661;
+}
+
+.logo-container {
+	height: 50px;
+}
+
+.user-image {
+	height: 50px !important;
+	float: left;
+	margin: 10px;
+	width: 50px;
+	object-fit: cover;
+}
+
+body.sidebar-collapse .user-image {
+	height: 50px !important;
+}
+
+body.sidebar-collapse #user-name {
+	display: none !important;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0px 0px 20px 0px #183661;
+       -moz-box-shadow: 0px 0px 20px 0px #183661;
+            box-shadow: 0px 0px 20px 0px #183661;
+}
+
+.totalwin-grid thead th {
+	background-color: #183661 !important;
+	color: white !important;
+	text-align: center;
+}
+
+.totalwin-grid tbody td {
+	font-size: 14px;
+}
+
+.totalwin-grid tfoot td {
+	background-color: #363738 !important;
+	color: white !important;
+	font-size: 18px;
+}
+
+.input-persen {
+	width: 40px !important;
+	padding: 0 10px;
+}
+
+.pilih-ke {
+	width: 60px !important;
+	padding: 0 10px;
+}
+
+.status-label {
+	width: 60px;
+	display: inline-block;
+	background-color: white;
+	padding: 5px;
+	margin: -10px;
+	text-align: center;
+	border: 1px solid darkgrey;
+}
+
+table.form-nilai thead tr th {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.btn-print {
+	width: 130px;
+	font-size: 14px;
+}
+
+.btn-prosen {
+	width: 100px;
+}
+
+input.form-control {
+	padding: 0.375rem !important;
+}
+
+ol.list-soal {
+	counter-reset: my-awesome-counter;
+	list-style: none;
+	padding-left: 40px;
+}
+
+ol.list-soal li {
+	margin: 0 0 0.5rem 0;
+	counter-increment: my-awesome-counter;
+	position: relative;
+}
+
+ol.list-soal li::before {
+	content: counter(my-awesome-counter);
+	font-size: 1.2rem;
+	font-weight: bold;
+	position: absolute;
+	--size: 42px;
+	left: calc(-1 * var(--size) - 10px);
+	line-height: var(--size);
+	width: var(--size);
+	height: var(--size);
+	top: 0;
+	border-radius: 50%;
+	text-align: center;
+	box-shadow: 1px 1px 0 #999;
+	color: #fff;
+}
+
+ol.list-soal li.not-done::before {
+	background: red;
+}
+
+ol.list-soal li.done::before {
+	background: green;
+}

@@ -1,0 +1,41 @@
+ol.list-soal {
+	counter-reset: my-awesome-counter;
+	list-style: none;
+	padding-left: 40px;
+  }
+  ol.list-soal li {
+	margin: 0 0 0.5rem 0;
+	counter-increment: my-awesome-counter;
+	position: relative;
+  }
+
+  ol.list-soal li::before {
+	content: counter(my-awesome-counter);
+	font-size: 1.2rem;
+	font-weight: bold;
+	position: absolute;
+	--size: 42px;
+	left: calc(-1 * var(--size) - 10px);
+	line-height: var(--size);
+	width: var(--size);
+	height: var(--size);
+	top: 0;
+	border-radius: 50%;
+	text-align: center;
+	box-shadow: 1px 1px 0 #999;
+	color: #fff;
+  }
+  
+  ol.list-soal li.not-done::before {
+	background: red;
+  }
+  
+  ol.list-soal li.done::before {
+	background: green;
+  }
+
+  .page-footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+  }

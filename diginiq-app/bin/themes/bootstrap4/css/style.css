@@ -1,0 +1,11 @@
+section {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #1e1e1e;
+    background-color: rgb(234, 237, 238);
+}
+
+section h1 {
+    color: darkslateblue;
+    padding-bottom: 15px;
+}

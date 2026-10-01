@@ -1,0 +1,144 @@
+/** Report css **/
+table.nice-title{
+	font-family:arial;font-size:14px;font-weight:bold;text-align:center;line-height:15px;
+	border:1px solid black; padding:10px 0;
+}
+.nice-title tr,td{
+	border-style:none;
+}
+.grand-title{
+	text-align:center;font-weight:bold;font-size:16px;
+}
+.grand_title{
+	font-weight:bold;font-size:16px;
+}
+.title{
+	text-align:center;font-weight:bold;font-size:12px;
+}
+.title2{
+	font-weight:bold;font-size:12px;
+}
+tr,td.title2,.grand_title{
+	border-style:none;
+}
+tr,td.title,.grand-title{
+	border-style:none;
+}
+tr th.no-right, .sub-title > tbody > tr.row2 > td.no-right{
+	border-right:none;
+}
+tr th.no-left,.sub-title > tbody > tr.row2 > td.no-left{
+	border-left:none;
+}
+.sub-title > tbody > tr.row2 > td{
+	border-left:1px solid black;
+	border-right:1px solid black;
+}
+table.noborder{
+	font-family:arial;font-size:12px;
+	border-style:none;
+}
+table.sub-title{
+	font-family:arial;font-size:12px;
+	border:1px solid black;
+}
+.sub-title tbody tr td{
+	border-style:none; padding-left:5px;
+}
+
+.sub-title tbody tr td.label{
+	font-weight:bold; width:150px; padding-right:5px; text-align:right;
+	background-color:#EDF6FC;
+}
+
+.sub-title tbody tr td.isi{
+	background-color:#FAF1ED;
+}
+
+.sub-title tbody tr.row td{
+	border:1px solid black; 
+}
+.sub-title tbody tr td.top-border{
+	border-top:1px solid black; 
+}
+.sub-title tbody tr td.box-border{
+	border:1px solid black; 
+}
+.no-border{
+	border-style:none;
+}
+thead.block, tr.block{
+	font-size:13px;font-weight:bold;text-align:center;border-bottom:1px solid #4755C4;border-top:1px solid #4755C4;color:#fff;background-color:#5C68BF;line-height:22px;
+}
+th,td{
+	border:1px solid black;padding:2px 8px;
+}
+.bold{font-weight:bold;} .center{text-align:center;} .right{text-align:right;padding-right:10px;} .left{text-align:left; margin-left:2px;}
+.nrc{
+	border:1px solid #BBBBBB;font-family:arial;font-size:12px;border-collapse:collapse;text-align:left;
+}
+.nrc td{
+	border-right:1px solid #BBBBBB;
+}
+.lra{
+	border:1px solid #BBBBBB;font-family:arial;font-size:12px;border-collapse:collapse;text-align:left;
+}
+.lra td{
+	border-right:1px solid #BBBBBB;
+}
+tr.sub_total{
+	text-align:right;padding-right:10px;font-weight:bold;background-color:#DAD9FF;
+}
+tr.total{
+	line-height:20px;text-align:right;padding-right:10px;font-weight:bold;background-color:#DAD9FF;border-top:1px solid #BBBBBB;
+}
+tr.sub_header{
+	background-color:#FAF2C0;
+}
+.footer{font-family:arial;font-size:12px;}
+tr,td.footer{
+	border-style:none;
+}
+a.link-bb{text-decoration:none;color:#000;}
+/** end report css **/
+p.warn{
+	text-align:center;
+	padding:10px;
+	color:red;
+	background-color:#F5E1E3;
+	border:1px solid #E61E32;
+}
+td.header{
+	font-size:14px;	font-weight:bold;		
+	text-align:center;
+}
+tr td{
+	font-size:12px;
+}
+td.label{
+	font-size:12px;		
+	width:115px;
+	padding:10px;
+	text-align:right;
+}
+td.opsi{
+	vertical-align:middle;
+	width:350px;
+}
+table tbody tr.hDiv th{	
+	padding:3px;
+	position:relative;
+	border:1px solid #ccc;
+	border-bottom:0px;
+	overflow:hidden; 
+	border-right:1px dotted #ccc;
+	font-size:12px;	text-align:center;
+	background:#fafafa url('easyui/datagrid_header_bg.gif') repeat; /*-x left bottom*/
+	border-bottom:1px dotted #ccc;
+	border-top:1px dotted #fff;
+}
+.footer-sum{
+	font-weight:bold; text-align:right;
+	padding:5px; margin:5px;
+	border:1px solid #628FF0;		
+}

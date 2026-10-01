@@ -1,0 +1,14 @@
+
+.loading-text {
+    font-size: 2.4rem !important;
+	padding: 10px !important;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	-webkit-text-stroke: 1px #00afcc;
+    text-shadow:
+		-1px -1px 0 #00afcc,
+		1px -1px 0 #00afcc,  
+		-1px 1px 0 #00afcc,
+		1px 1px 0 #00afcc
+}
