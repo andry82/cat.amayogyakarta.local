@@ -154,6 +154,11 @@ class Test extends UserController
 				unset($posts['sisa_waktu_tertulis']);
 			}
 
+			if ((int) ($this->user['peserta']['target'] ?? 0) === 1)
+			{
+				return;
+			}
+
 			$t = DB::table('tes_tertulis');
 
 			foreach ($posts as $post => $value)
@@ -207,6 +212,11 @@ class Test extends UserController
 				]);
 
 				unset($posts['sisa_waktu_tertulis']);
+			}
+
+			if ((int) ($this->user['peserta']['target'] ?? 0) === 1)
+			{
+				return;
 			}
 
 			if (isset($posts['jawaban'])
