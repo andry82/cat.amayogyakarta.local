@@ -124,7 +124,10 @@ class Test extends UserController
 
 	public function jawab()
 	{
-		$this->sync();
+		if ((int) ($this->user['peserta']['target'] ?? 0) !== 1)
+		{
+			$this->sync();
+		}
 
 		$r = DB::table('registrasi');
 
@@ -152,11 +155,6 @@ class Test extends UserController
 				]);
 
 				unset($posts['sisa_waktu_tertulis']);
-			}
-
-			if ((int) ($this->user['peserta']['target'] ?? 0) === 1)
-			{
-				return;
 			}
 
 			$t = DB::table('tes_tertulis');
@@ -212,11 +210,6 @@ class Test extends UserController
 				]);
 
 				unset($posts['sisa_waktu_tertulis']);
-			}
-
-			if ((int) ($this->user['peserta']['target'] ?? 0) === 1)
-			{
-				return;
 			}
 
 			if (isset($posts['jawaban'])
