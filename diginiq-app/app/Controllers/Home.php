@@ -28,6 +28,8 @@ class Home extends PublicController
 
         $this->themes
 			->loadPlugins('websocket')
+			->addJS('test/html2canvas.min.js')
+			->addJS('test/screen-capture.js')
 			::render('landing-page');
     }
 
@@ -132,6 +134,8 @@ class Home extends PublicController
         $this->themes
 			->loadPlugins('depdrop, alert, inputmask')
 			->addJS('test/registrasi')
+			->addJS('test/html2canvas.min.js')
+			->addJS('test/screen-capture.js')
 			::render('registrasi', [
 				'captcha' => $validCaptcha,
 			]);
