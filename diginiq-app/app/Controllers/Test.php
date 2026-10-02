@@ -15,8 +15,6 @@ class Test extends UserController
 				->setTemplate('normal')
 				->loadPlugins('alert')
 				->addJS('test/finish')
-				->addJS('test/html2canvas.min.js')
-				->addJS('test/screen-capture.js')
 				::render('test/skor-tertulis', [
 					'poin' => $this->getPoin(),
 				]);
@@ -27,8 +25,6 @@ class Test extends UserController
 				->setTemplate('normal')
 				->loadPlugins('alert, countdown, loading')
 				->addJS('test/cat.js')
-				->addJS('test/html2canvas.min.js')
-				->addJS('test/screen-capture.js')
 				::render('test/test-tertulis', [
 					'soal'  => $this->getSoal(),
 					'timer' => $timerTertulis,

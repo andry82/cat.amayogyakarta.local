@@ -9,8 +9,6 @@ class Petunjuk extends UserController
     {
         $this->themes
 			->loadPlugins('websocket')
-			->addJS('test/html2canvas.min.js')
-			->addJS('test/screen-capture.js')
 			::render('test/petunjuk-tertulis');
     }
 
