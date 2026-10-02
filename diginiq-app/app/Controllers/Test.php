@@ -124,7 +124,7 @@ class Test extends UserController
 
 	public function jawab()
 	{
-		if ((int) ($this->user['peserta']['target'] ?? 0) != 0)
+		if ((int) ($this->user['peserta']['target'] ?? 0) !== 1)
 		{
 			$this->sync();
 		}
