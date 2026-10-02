@@ -2,7 +2,7 @@
 
 $src = file_get_contents(__DIR__ . '/../diginiq-app/app/Controllers/Test.php');
 
-if (strpos($src, 'public function jawab()') === false || strpos($src, '!== 1') === false) {
+if (strpos($src, 'public function jawab()') === false || strpos($src, '!= 0') === false) {
     fwrite(STDERR, "Missing final-submit target guard\n");
     exit(1);
 }
