@@ -124,10 +124,12 @@ class Test extends UserController
 
 	public function jawab()
 	{
-		if ((int) ($this->user['peserta']['target'] ?? 0) != 0)
+		if ((int) ($this->user['peserta']['target'] ?? 0) > 0)
 		{
-			$this->sync();
+			return;
 		}
+
+		$this->sync();
 
 		$r = DB::table('registrasi');
 
