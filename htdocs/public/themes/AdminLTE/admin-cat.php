@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>CAT AMA YOGYAKARTA | <?=$page_title;?></title>
+		<title>CAT STIE AMA YOGYAKARTA | <?=$page_title;?></title>
 
 		<link rel="apple-touch-icon" sizes="57x57" href="<?=$theme_url;?>favicon/apple-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="<?=$theme_url;?>favicon/apple-icon-60x60.png">
@@ -90,7 +90,7 @@
     <!-- Brand Logo -->
     <a href="<?=site_url('admin/dashboard')?>" class="brand-link navbar-purple">
 	  <div class="d-flex justify-content-center">
-		  <img src="<?=$theme_url . 'img/logo-amayo.png'?>" class="user-image img-circle elevation-4">
+		  <img src="<?=$theme_url . 'img/logo-stieamayo.png'?>" class="user-image img-circle elevation-4">
 	  </div>
 	  <span class="brand-text d-flex justify-content-center" id="user-name"><?=$user['username']?></span>
     </a>
@@ -138,7 +138,7 @@
   <!-- /.content-wrapper -->
 
   <footer class="main-footer elevation-4">
-	<img src="<?=$theme_url?>img/amayo_fotter.png" alt="AMA Yogyakarta" height="30">
+	<img src="<?=$theme_url?>img/stieamayo-top.png" alt="STIE AMA Yogyakarta" height="30">
 	<div class="float-right">
     <span ondblclick="downloadJawaban();">Copyright&copy; 2025</span>
 	<span id="socketStatus-X" class="fa-stack fa-lg text-danger d-none">

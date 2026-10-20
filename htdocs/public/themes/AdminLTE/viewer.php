@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-		<title>Sekolah Tinggi Ilmu Ekonomi Totalwin <?=$page_title;?></title>
+		<title>Sekolah Tinggi Ilmu Ekonomi AMA YOGYAKARTA <?=$page_title;?></title>
 
 		<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
 
