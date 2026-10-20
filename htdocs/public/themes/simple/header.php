@@ -46,7 +46,7 @@
   </head>
   <body class="d-flex flex-column h-100">
     <header class="page-header">
-	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #003366;">
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: darkgrey;">
         <div class="container d-flex justify-content-between">
           	<a class="navbar-brand" href="<?=site_url()?>">
 		  	<?php if (in_array(current_url(), [site_url('test/tertulis'), site_url('test/selesai')])) : ?>
