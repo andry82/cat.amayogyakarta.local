@@ -1,6 +1,6 @@
 <div class="col-12 col-md-4 text-center">
 <div class="card shadow">
-  <div class="card-header h4 text-center text-white" style="background-color: #003366;">
+  <div class="card-header h4 text-center text-white" style="background-color: darkgrey;">
     REGISTRASI
   </div>
   <div class="card-body text-left">
