@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="<?=$theme_url;?>css/all.min.css?v=1">
     <link rel="stylesheet" href="<?=$theme_url;?>css/animate.min.css">
 
-    <title>CAT AMA YOGYAKARTA - <?=$page_title;?></title>
+    <title>CAT STIE AMA YOGYAKARTA - <?=$page_title;?></title>
 
 	<?php \Arifrh\Themes\Themes::renderCSS(); ?>
 
@@ -52,7 +52,7 @@
 		  	<?php if (in_array(current_url(), [site_url('test/tertulis'), site_url('test/selesai')])) : ?>
 			  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAD0lEQVR42mNkwAIYh7IgAAVVAAuInjI5AAAAAElFTkSuQmCC" id="xyz">
 			  <?php endif; ?>
-			  <img src="<?=$theme_url?>images/amayo_top.png" alt="CAT" height="60px">
+			  <img src="<?=$theme_url?>images/stieamayo-top.png" alt="CAT" height="60px">
 			</a>			
           </div>
         </div>
