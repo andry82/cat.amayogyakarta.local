@@ -1,6 +1,7 @@
 <?php namespace App\Controllers\Admin;
 
 use Arifrh\DynaModel\DB;
+use App\Libraries\WrittenScore;
 use App\Controllers\Traits\PrintTrait;
 use NcJoes\OfficeConverter\OfficeConverter;
 use PhpOffice\PhpWord\TemplateProcessor;
@@ -526,7 +527,11 @@ class Penilaian extends \App\Controllers\AdminController
 						'no_registrasi' => $no_registrasi,
 					]);
 
-				$skor = $hasil['totalPoin'];
+				$registrasi = $r->findOneBy(['no_registrasi' => $no_registrasi]);
+				$skor = WrittenScore::cap(
+					$hasil['totalPoin'],
+					is_array($registrasi) ? ($registrasi['main'] ?? 0) : 0
+				);
 
 				$r->updateBy([
 					'skor_tertulis' => $skor,
@@ -640,7 +645,11 @@ class Penilaian extends \App\Controllers\AdminController
 									'no_registrasi' => $no_registrasi,
 								]);
 
-							$skor = $hasil['totalPoin'];
+							$registrasi = $r->findOneBy(['no_registrasi' => $no_registrasi]);
+							$skor = WrittenScore::cap(
+								$hasil['totalPoin'],
+								is_array($registrasi) ? ($registrasi['main'] ?? 0) : 0
+							);
 
 							$r->updateBy([
 								'skor_tertulis' => $skor,
