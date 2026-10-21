@@ -3,7 +3,6 @@ namespace App\Controllers;
 
 use Arifrh\DynaModel\DB;
 use Arifrh\Themes\Themes;
-use App\Libraries\WrittenScore;
 
 class UserController extends ProtectedController
 {
@@ -41,10 +40,7 @@ class UserController extends ProtectedController
 				'no_registrasi' => $this->user['peserta']['no_registrasi'],
 			]);
 
-		$skor = WrittenScore::cap(
-			$hasil['totalPoin'],
-			$this->user['peserta']['main'] ?? 0
-		);
+		$skor = $hasil['totalPoin'];
 
 		$r = DB::table('registrasi');
 
