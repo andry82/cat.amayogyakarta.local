@@ -13,5 +13,7 @@ CREATE TABLE `tes_tertulis` (
   `kunci_jawaban` ENUM ('a', 'b', 'c', 'd'),
   `poin` TINYINT (1) DEFAULT 0,
   `waktu_jawab` DATETIME,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uq_tes_tertulis_peserta_nomor` (`no_registrasi`, `nomor`),
+  UNIQUE KEY `uq_tes_tertulis_peserta_pertanyaan` (`no_registrasi`, `pertanyaan`(255))
 ) ENGINE = INNODB CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;

@@ -5,6 +5,7 @@ CREATE TABLE `registrasi` (
   `nama_lengkap` VARCHAR (100) NULL,
   `kode_test` VARCHAR (20) NULL,
   `desa_id` INT NULL,
+  `main` VARCHAR (100) NULL,
   `tanggal_registrasi` DATETIME,
   `user_id` INT NULL,
   `mulai_tes_tertulis` DATETIME,
