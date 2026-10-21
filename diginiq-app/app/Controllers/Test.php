@@ -2,7 +2,6 @@
 namespace App\Controllers;
 
 use Arifrh\DynaModel\DB;
-use App\Libraries\WrittenScoring;
 
 class Test extends UserController
 {
@@ -182,15 +181,18 @@ class Test extends UserController
 			return;
 		}
 
+		$poin = $answer === $soal['kunci_jawaban']
+			? $this->user['tests']['poin_tes_tertulis']
+			: 0;
+
 		$t->updateBy([
 			'waktu_jawab' => date('Y-m-d H:i:s'),
 			'jawaban'     => $answer,
+			'poin'        => $poin,
 		], [
 			'no_registrasi' => $noReg,
 			'id'            => $id,
 		]);
-
-		WrittenScoring::recalculate($noReg);
 	}
 
 	public function update()

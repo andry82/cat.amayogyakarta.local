@@ -1,7 +1,6 @@
 <?php namespace App\Controllers\Admin;
 
 use Arifrh\DynaModel\DB;
-use App\Libraries\WrittenScoring;
 use App\Controllers\Traits\PrintTrait;
 use NcJoes\OfficeConverter\OfficeConverter;
 use PhpOffice\PhpWord\TemplateProcessor;
@@ -516,6 +515,26 @@ class Penilaian extends \App\Controllers\AdminController
 		$registrations = $this->refreshSkorNilai($kodeTest);
 
 		if (! empty($registrations)) {
+
+			$t = DB::table('tes_tertulis');
+			$r = DB::table('registrasi');
+
+			foreach($registrations as $no_registrasi) {
+
+				$hasil = $t->select('SUM(poin) as totalPoin', false)
+					->findOneBy([
+						'no_registrasi' => $no_registrasi,
+					]);
+
+				$skor = $hasil['totalPoin'];
+
+				$r->updateBy([
+					'skor_tertulis' => $skor,
+				], [
+					'no_registrasi' => $no_registrasi,
+				]);
+			}
+
 			session()->setFlashdata('message', 'Nilai untuk Kode Test' . $kodeTest . ' telah disinkronisasi');
 		}
 
@@ -555,7 +574,6 @@ class Penilaian extends \App\Controllers\AdminController
 
 			$data['skor_praktik']   = round((($data['skor_word'] * $prosentaseWord) + ($data['skor_excel'] * $prosentaseExcel) + ($data['skor_ppt'] * $prosentasePpt) + ($data['skor_email'] * $prosentaseEmail)), 2);
 			$data['skor_wawancara'] = $this->sumTotal(['interview1', 'interview2', 'interview3'], $data);
-			$data['skor_tertulis']  = WrittenScoring::recalculate($data['no_registrasi']);
 
 			$r->update($data['id'], $data);
 		}
@@ -611,7 +629,24 @@ class Penilaian extends \App\Controllers\AdminController
 								'no_registrasi' => $no_registrasi,
 							]);
 					
-							WrittenScoring::recalculate($no_registrasi);
+							$sqlUpdatePoin = 'UPDATE tes_tertulis t JOIN registrasi r ON t.`no_registrasi` = r.`no_registrasi` ';
+							$sqlUpdatePoin .= 'SET t.poin = (CASE WHEN t.jawaban = t.kunci_jawaban THEN ';
+							$sqlUpdatePoin .= '(SELECT poin_tes_tertulis FROM tests WHERE tests.`kode_test` = r.`kode_test`) ELSE 0 END)';
+					
+							$r->query($sqlUpdatePoin);
+
+							$hasil = $t->select('SUM(poin) as totalPoin', false)
+								->findOneBy([
+									'no_registrasi' => $no_registrasi,
+								]);
+
+							$skor = $hasil['totalPoin'];
+
+							$r->updateBy([
+								'skor_tertulis' => $skor,
+							], [
+								'no_registrasi' => $no_registrasi,
+							]);
 							
 							$return = [
 								'error'   => false,

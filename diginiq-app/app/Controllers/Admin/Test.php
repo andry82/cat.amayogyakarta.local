@@ -1,7 +1,6 @@
 <?php namespace App\Controllers\Admin;
 
 use Arifrh\DynaModel\DB;
-use App\Libraries\WrittenScoring;
 
 use function React\Promise\reduce;
 
@@ -296,10 +295,16 @@ class Test extends \App\Controllers\AdminController
 
 	public function showResult($noReg)
 	{
-		$skor = WrittenScoring::recalculate($noReg);
 		$t = DB::table('tes_tertulis');
 
 		$soal = $t->orderBy('nomor', 'asc')->findBy(['no_registrasi' => $noReg]);
+
+		$hasil = $t->select('SUM(poin) as totalPoin', false)
+			->findOneBy([
+				'no_registrasi' => $noReg,
+			]);
+
+		$skor = $hasil['totalPoin'];
 
 		$this->themes
 				::render('admin/hasil-test-tertulis', [

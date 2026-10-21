@@ -3,7 +3,6 @@ namespace App\Controllers;
 
 use Arifrh\DynaModel\DB;
 use Arifrh\Themes\Themes;
-use App\Libraries\WrittenScoring;
 
 class UserController extends ProtectedController
 {
@@ -34,6 +33,23 @@ class UserController extends ProtectedController
 
 	protected function getPoin()
 	{
-		return WrittenScoring::recalculate($this->user['peserta']['no_registrasi']);
+		$t = DB::table('tes_tertulis');
+
+		$hasil = $t->select('SUM(poin) as totalPoin', false)
+			->findOneBy([
+				'no_registrasi' => $this->user['peserta']['no_registrasi'],
+			]);
+
+		$skor = $hasil['totalPoin'];
+
+		$r = DB::table('registrasi');
+
+		$r->updateBy([
+			'skor_tertulis' => $skor,
+		], [
+			'no_registrasi' => $this->user['peserta']['no_registrasi'],
+		]);
+
+		return $skor;
 	}
 }
