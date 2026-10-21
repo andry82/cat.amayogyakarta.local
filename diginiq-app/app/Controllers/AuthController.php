@@ -15,6 +15,7 @@ namespace App\Controllers;
 
 use Arifrh\Auth\Auth;
 use Arifrh\DynaModel\DB;
+use App\Libraries\WrittenScoring;
 use App\Controllers\Traits\WSTrait;
 use CodeIgniter\Controller;
 use Ratchet\MessageComponentInterface;
@@ -116,24 +117,16 @@ class AuthController extends Controller implements MessageComponentInterface
 							{
 								$r = DB::table('registrasi');
 								$registrasi = $r->findOneBy(['no_registrasi' => $soal['no_registrasi']]);
-								$tests = DB::table('tests');
-								$test = is_array($registrasi)
-									? $tests->findOneBy(['kode_test' => $registrasi['kode_test']])
-									: null;
-
-								if (is_array($test))
+								if (is_array($registrasi))
 								{
-									$poin = $data['value'] === $soal['kunci_jawaban']
-										? $test['poin_tes_tertulis']
-										: 0;
-
 									$t->updateBy([
 										'waktu_jawab' => date('Y-m-d H:i:s'),
 										'jawaban'     => $data['value'],
-										'poin'        => $poin,
 									], [
 										'id' => $data['keyval'],
-								]);
+									]);
+
+									WrittenScoring::recalculate($soal['no_registrasi']);
 								}
 							}
 						}
