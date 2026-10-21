@@ -20,6 +20,7 @@ CREATE TABLE `registrasi` (
   `skor_ppt` SMALLINT NOT NULL DEFAULT 0,
   `skor_email` SMALLINT NOT NULL DEFAULT 0,
   `skor_wawancara` SMALLINT NOT NULL DEFAULT 0,
+  `main` SMALLINT NOT NULL DEFAULT 0,
   `last_page` VARCHAR (100) NULL,
   PRIMARY KEY (`id`)
 ) ENGINE = INNODB CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
