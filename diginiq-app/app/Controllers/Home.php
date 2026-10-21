@@ -46,18 +46,6 @@ class Home extends PublicController
 		{
 			if (intval($post['captcha']) === intval($validCaptcha['sum']))
 			{
-				$mainMaster = $this->settings->mainMaster ?? null;
-
-				if ($mainMaster === null || trim((string) $mainMaster) === '')
-				{
-					session()->setFlashdata([
-						'error'   => true,
-						'message' => 'Konfigurasi main_master belum tersedia.',
-					]);
-
-					return redirect()->back()->withInput();
-				}
-
 				$t = DB::table('tests');
 
 				$tests = $t->findOneBy(['kode_test' => $post['kode_test']]);
@@ -69,7 +57,6 @@ class Home extends PublicController
 					'nama_lengkap'        => trim($post['nama_lengkap']),
 					'kode_test'           => trim($post['kode_test']),
 					'desa_id'             => $post['desa_id'],
-					'main'                => $mainMaster,
 					'tanggal_registrasi'  => date('Y-m-d H:i:s'),
 					'sisa_waktu_tertulis' => intval($tests['timer_tes_tertulis']) * 60, // konversi ke timer detik
 					'sisa_waktu_praktik'  => intval($tests['timer_tes_praktik']) * 60, // konversi ke timer detik

@@ -5,7 +5,6 @@ SELECT
   `r`.`nama_lengkap`         AS `nama_lengkap`,
   `r`.`kode_test`            AS `kode_test`,
   `r`.`desa_id`              AS `desa_id`,
-  `r`.`main`                 AS `main`,
   `r`.`tanggal_registrasi`   AS `tanggal_registrasi`,
   `r`.`user_id`              AS `user_id`,
   `r`.`mulai_tes_tertulis`   AS `mulai_tes_tertulis`,
